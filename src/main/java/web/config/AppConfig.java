@@ -28,9 +28,11 @@ public class AppConfig {
     public UserService userService() {
         return new UserServiceImpl();
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
+
         em.setDataSource(dataSource());
         em.setPackagesToScan("web.model");
         em.setJpaVendorAdapter(new HibernateJpaVendorAdapter());

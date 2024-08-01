@@ -21,7 +21,7 @@ import java.util.Properties;
 @EnableJpaRepositories("web.repository")
 @EnableTransactionManagement
 //@PropertySource("classpath:db.properties")
-@ComponentScan(basePackages = {"web.controller", "web.service"})
+@ComponentScan("web")
 public class AppConfig {
 
     @Bean
@@ -62,7 +62,7 @@ public class AppConfig {
 
     Properties additionalProperties() {
         Properties properties = new Properties();
-        properties.setProperty("hibernate.hbm2ddl.create-drop", "update");
+        properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
         properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         properties.setProperty("hibernate.show_sql", "true");
         return properties;

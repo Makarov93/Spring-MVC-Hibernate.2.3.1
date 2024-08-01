@@ -28,10 +28,10 @@ public class UserController {
         return "add-user";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/added")
     public String addUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "redirect:/users";
+        return "redirect:/users/user_list";
     }
 
     @GetMapping("/edit")
@@ -44,12 +44,12 @@ public class UserController {
     @PostMapping("/edit")
     public String editUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "redirect:/users";
+        return "redirect:/users/user_list";
     }
 
-    @PostMapping("/delete")
+    @GetMapping("/delete")
     public String deleteUser(@RequestParam("id") Long id) {
         userService.deleteUser(id);
-        return "redirect:/users";
+        return "redirect:/users/user_list";
     }
 }

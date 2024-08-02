@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+</head>
+<body>
+<h1>Edit User</h1>
+<form action="/users/edit" method="post">
+    <input type="hidden" name="id" th:value="${user.id}"/>
+    <p>Name: <input type="text" name="name" th:value="${user.name}"/></p>
+    <p>Email: <input type="text" name="email" th:value="${user.email}"/></p>
+    <p><input type="submit" value="Save Changes"/></p>
+</form>
+<a href="/users/user_list">Back to User List</a>
+</body>
+</html>
